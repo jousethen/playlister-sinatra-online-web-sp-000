@@ -38,7 +38,7 @@ class SongsController < ApplicationController
     params[:genres].each do |genre|
       SongGenre.create(song_id: @song.id, genre_id: genre)
     end
-    
+    flash[:message] = "Successfully created song."
     redirect to "songs/#{@song.slug}"
   end
   
